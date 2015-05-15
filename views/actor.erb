@@ -1,0 +1,8 @@
+<h1><% @actor.name %></h1>
+
+<h3>Select all movies starring this actor:</h3>
+
+<%% if @movies.any?() %>
+<form action="/actors/<%= @actor_id() %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  

@@ -1,0 +1,22 @@
+<h1>Welcome to the Movie Page</h1>
+<h3>Add a new movie:</h3>
+
+<form action="/movies" method="post">
+  <div class="form-group">
+    <label for="name">Movie Name:</label>
+    <input id="name" name="name" type="text">
+  </div>
+  <button type="submit" class="btn btn-success">Add</button>
+</form>
+
+<% if @movies.any?() %>
+<p>Click on the movie to see information about it.</p>
+
+<ul>
+  <% @movies.each() do |movie| %>
+  <li><a href="/movies/<%= movie.id() %>"><%= movie.name() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>There are no movies yet.</p>
+<% end %>
